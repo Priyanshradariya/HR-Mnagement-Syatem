@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .attendance-card {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        padding: 70px 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .attendance-btn {
+        background: none;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="attendance-card">
+        <form>
+        <button class="attendance-btn" name="mark_attendance" >Attendance</button>
+    </form>
+    </div>
+</body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const initiateBtn = document.querySelector(".attendance-btn");
+    const attendanceCard = document.querySelector(".attendance-card");
+
+    // Show form on button click
+    initiateBtn.addEventListener("click", function () {
+        attendanceCard.style.background = "green"; // Hide button when form appears
+    });
+
+});
+
+</script>
+</html>

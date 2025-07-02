@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/adminPanel.css">
+    
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <h2>Admin Tools</h2>
+            <ul>
+                <li><a href="#"> Dashboard</a></li>
+                <li><a href="#">Employees</a></li>
+                <li><a href="#">Organization</a></li>
+                <li><a href="#">Requests</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Payrolls</a></li>
+            </ul>
+        </aside>
+        <main>
+            <header>
+                <h1>Welcome, Super Root!</h1>
+                <form action="logout.php" > 
+                    <input type="submit" value="Logout"> 
+                </form>
+            </header>
+            <section class="quote">
+                <h2>Quote of the day</h2>
+                <blockquote>"Loading Quote..." - Loading Author...</blockquote>
+            </section>
+            <div class="cards">
+                <div class="card pay-day">
+                    <h3>Pay Day</h3>
+                    <p>Pay Day: 1st of every month.</p>
+                    <p>Days Remaining: 15 Days.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="card data-february">
+                    <h3>Data of February</h3>
+                    <p>Work Days: 4 Days</p>
+                    <p>Weekends: 8 Days</p>
+                    <p>Holidays: 16 Days</p>
+                </div>
+                <div class="card attendance">
+                    <h3>Your Attendance This Month</h3>
+                    <p>Attended: 13</p>
+                    <p>Absent: 1</p>
+                    <p>Hours: 69h</p>
+                    <div class="attendance-progress">
+                        <h4>69.07 Hours extra</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card salary">
+                    <h3>Your Salary</h3>
+                    <p>EGP 6,765</p>
+                    <p>Last Updated: 2024-12-03</p>
+                </div>
+            </div>
+            <footer class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <button>Payroles <!-- Add icon --> Go to Payments →</button>
+                    <button>Attendance <!-- Add icon --> Go to Attendance →</button>
+                    <button>Calendar <!-- Add icon --> Go to Calendar →</button>
+                    <button>Support <!-- Add icon --> Go to Requests →</button>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+aside {
+    width: 250px;
+    background: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+aside h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+li a
+{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');  
+
+aside ul li:hover {
+    background: #1A252F;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.today-off {
+    background: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Quote Section */
+.quote {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.quote h2 {
+    margin-bottom: 10px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 10px;
+}
+
+.progress {
+    background: #27ae60;
+    height: 100%;
+}
+
+.attendance-progress {
+    margin-top: 10px;
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-top: 30px;
+}
+
+.quick-actions h2 {
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    min-width: 150px;
+}
+
+.action-buttons button:hover {
+    background: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+        text-align: center;
+    }
+    aside ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+}

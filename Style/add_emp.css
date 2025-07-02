@@ -1,0 +1,361 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #12131A;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #1E1F29;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: #181922;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a.active {
+    border-bottom: 2px solid #8B5CF6;
+}
+
+.right-nav span {
+    margin-left: 10px;
+}
+
+/* Form Styling */
+.form-container {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #B3B3B3;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #444;
+    background: #2B2B3C;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[readonly] {
+    background: #252636;
+    color: #888;
+    cursor: not-allowed;
+}
+
+small {
+    font-size: 12px;
+    color: #888;
+}
+
+small a {
+    color: #8B5CF6;
+    text-decoration: none;
+}
+
+.salary-input {
+    display: flex;
+}
+
+.salary-input select {
+    width: 30%;
+    margin-right: 10px;
+}
+
+.salary-input input {
+    width: 70%;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #444;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #8B5CF6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    background: #8B5CF6;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #6D4BC6;
+}
+
+
+@media screen and (max-width: 1024px) {
+    /* Tablet View */
+
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+    }
+
+    .right-nav {
+        margin-top: 5px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .salary-input {
+        flex-direction: column;
+    }
+
+    .salary-input select,
+    .salary-input input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Small Tablet View */
+
+    .container {
+        /* width: 100%; */
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 8px;
+    }
+
+    nav a {
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    input,
+    select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .switch {
+        width: 40px;
+        height: 20px;
+    }
+
+    .slider:before {
+        width: 16px;
+        height: 16px;
+        left: 2px;
+        bottom: 2px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    /* Mobile View (320px) */
+
+    .container {
+        width: 100%;
+        margin: 5px auto;
+        padding: 8px;
+    }
+
+    /* Navbar with Toggle Menu */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #181922;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 8px;
+        text-align: center;
+        display: block;
+        font-size: 14px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Form */
+    .form-container {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    input,
+    select {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .switch {
+        width: 35px;
+        height: 18px;
+    }
+
+    .slider:before {
+        width: 14px;
+        height: 14px;
+        left: 2px;
+        bottom: 2px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(17px);
+    }
+}

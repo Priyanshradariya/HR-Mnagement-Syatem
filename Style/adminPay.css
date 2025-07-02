@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121826;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.status-filters{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #1C2434;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+}
+
+.filters {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin: 15px 13px;
+        align-items: center;
+    
+}
+
+.serch_date_div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input[type="month"] {
+    padding: 8px 25px;
+    color: white;
+    border: 1px solid #555;
+    background-color: rgb(92, 91, 91);
+    border-radius: 5px;
+    border-radius: 5px;
+}
+
+.status-filters label {
+    margin-right: -2px;
+    border: 2px solid gray;
+    background: rgb(92, 91, 91);
+    padding: 3px 30px 4px 1px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+th {
+    background-color: #222B40;
+}
+
+td a {
+    color: #8AB4F8;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .status-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .status-filters label {
+        padding: 5px 20px;
+        font-size: 14px;
+    }
+
+    input[type="month"] {
+        font-size: 14px;
+        padding: 6px 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 12px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        display: flex;
+    }
+
+    .status-filters {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .status-filters label {
+        padding: 5px 15px;
+        font-size: 13px;
+    }
+
+    input[type="month"] {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 7px;
+        font-size: 12px;
+    }
+}
+
+/* @media screen and (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .status-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .status-filters label {
+        width: 100%;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    input[type="month"] {
+        width: 100%;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 5px;
+        font-size: 11px;
+    }
+}
+
+ */

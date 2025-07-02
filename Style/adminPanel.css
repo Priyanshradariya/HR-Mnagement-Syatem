@@ -1,0 +1,438 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #0e0f16;
+    color: #e0e0e0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #161b22;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    color: white;
+}
+
+/* Dropdown menu styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    width: 50%;
+}
+
+a{
+    margin: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+}
+
+.img_d{
+    width: 30%;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+
+ a.dropbtn {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li.dropdown{
+    list-style-type: none;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.tools{
+    color: white;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+    /* background-color: lightgray; */
+  }
+  
+.menu-item.active {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+  }
+
+  
+.sidebar ul li {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover, .sidebar ul .active {
+    background: #7c2ae8;
+    border-radius: 5px;
+}
+
+.badge {
+    background: #f54242;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+hr{
+    margin-top: -6px;
+}
+/* Main Content */
+.main-content {
+    margin-left: 275px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c2128;
+    padding: 10px;
+    margin-left: -9px;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-info span {
+    margin: 0 10px;
+}
+
+/* Dashboard */
+.dashboard {
+    margin-top: 20px;
+}
+
+.welcome {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Cards */
+.card {
+    background: #161b22;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background: #343a40;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 100%;
+    background: #f7b731;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-card {
+    flex: 1;
+    background: #161b22;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-card:hover {
+    background: #7c2ae8;
+}
+
+.menu{
+    font-size: 20px;
+    background: none;
+    color: white;
+    border: none;
+    padding: 10px
+}
+
+/* .menu-tog{
+    display: none;
+} */
+
+
+
+@media screen and (max-width: 1024px) {
+    /* Tablet */
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+        padding: 15px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .quick-actions {
+        flex-wrap: wrap;
+    }
+    
+    .action-card {
+        flex: 1 1 48%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile */
+    body {
+        flex-direction: column;
+    }
+
+    #menu{
+        display: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .sidebar ul li {
+        padding: 8px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-card {
+        width: 100%;
+    }
+
+    
+}
+
+
+@media screen and (max-width: 420px) {
+    /* Small Mobile (320x420) */
+
+    body {
+        flex-direction: column;
+        font-size: 14px;
+    }
+
+    /* Sidebar - Converted to Toggle Menu */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        display: none; /* Hidden by default */
+        background: #161b22;
+    }
+
+    .sidebar.active {
+        display: block; /* Show when toggled */
+    }
+
+    .menu-toggle {
+        display: block;
+        background: #7c2ae8;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .menu-toggle:focus {
+        outline: none;
+    }
+
+    .sidebar ul {
+        display: block;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        padding: 10px;
+        border-bottom: 1px solid #444;
+        font-size: 14px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .dashboard {
+        margin-top: 10px;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .progress-bar {
+        height: 6px;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-card {
+        width: 100%;
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .action-card img {
+        width: 50px;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px){
+    .menu-tog{
+        display: none;
+    }
+}
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #menu {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        transform: none;
+        background: none;
+    }
+
+    
+
+    /* #menu a {
+        padding: 10px 20px;
+    } */
+
+    .menu-btn {
+        display: none;
+    }
+}
+

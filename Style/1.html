@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* General Menu Styling */
+
+    body{
+        background-color: black;
+    }
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #161b22;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#menu a:hover {
+    background: #7c2ae8;
+}
+
+/* Menu Toggle Button */
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Show Menu */
+#menu.active {
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+    #menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        transform: none;
+        background: none;
+    }
+
+    #menu a {
+        padding: 10px 20px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+
+</style>
+
+<body>
+
+    <button id="menu-toggle" class="menu-btn">☰</button>
+<ul id="menu">
+    <a href="adminDash.php?name=Dashboard" class="tools"><li class="menu-item">My Dashboard</li></a>
+    <a href="adminEmp.php?name=Employees" class="tools"><li class="menu-item">Employees</li></a>
+    <a href="adminReq.php?name=Requests" class="tools"><li class="menu-item">Requests</li></a>
+    <a href="adminCal.php?name=Calendar" class="tools"><li class="menu-item">Calendar</li></a>
+    <a href="adminAtnd.php?name=Attendance" class="tools"><li class="menu-item">Attendance</li></a>
+    <a href="adminPay.php?name=Payrolls" class="tools"><li class="menu-item">Payrolls</li></a>
+    <a href="login.php" class="tools"><li class="menu-item">Log out</li></a>
+</ul>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById("menu");
+    const menuBtn = document.getElementById("menu-toggle");
+
+    menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
+
+</script>

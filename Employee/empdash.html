@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141e2a;
+            color: white;
+            text-align: center;
+        }
+        .calendar-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #1c2737;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2a3b4f;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .calendar-header button {
+            background: #3b4f6a;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .calendar-header button:hover {
+            background: #50fa7b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #3b4f6a;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            background: #1c2737;
+        }
+        th {
+            background: #3b4f6a;
+            font-weight: bold;
+        }
+        .event {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            background: #ffcc80;
+            color: black;
+            font-size: 12px;
+            padding: 3px;
+            border-radius: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .event.leave {
+            background: #b39ddb;
+        }
+        .event.holiday {
+            background: #80deea;
+        }
+        .event.other {
+            background: #f4b400;
+        }
+        .checkmark {
+            color: #4caf50;
+            font-size: 16px;
+            display: block;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button onclick="prevMonth()">&lt;&lt;</button>
+        <h2 id="monthYear"></h2>
+        <button onclick="nextMonth()">&gt;&gt;</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sat</th>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+            <!-- Calendar cells will be generated here -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let currentDate = new Date();
+    
+    const events = {
+        "2025-02-16": { type: "other", text: "Totam aut." },
+        "2025-02-24": { type: "other", text: "Quae possimus quia." },
+        "2025-02-18": { type: "leave", text: "Approved Leave - Priyansh" },
+        "2025-02-26": { type: "event", text: "Quam officia quaerat." },
+        "2025-02-28": { type: "holiday", text: "Min..." }
+    };
+
+    const checkmarkDays = [1, 2, 5, 7, 9, 11, 12, 14, 15]; // Days with checkmarks ✅
+
+    function generateCalendar() {
+        const monthYear = document.getElementById("monthYear");
+        const calendarBody = document.getElementById("calendar-body");
+        calendarBody.innerHTML = "";
+
+        const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+        const startDay = firstDay.getDay(); // Adjust to start from Saturday
+        const totalDays = lastDay.getDate();
+
+        monthYear.innerText = `${firstDay.toLocaleString('default', { month: 'long' })} ${firstDay.getFullYear()}`;
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            let row = document.createElement("tr");
+            for (let j = 0; j < 7; j++) {
+                let cell = document.createElement("td");
+
+                if ((i === 0 && j < startDay) || date > totalDays) {
+                    cell.innerHTML = "";
+                } else {
+                    let dayString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                    cell.innerHTML = date;
+
+                    // Add checkmarks ✅
+                    if (checkmarkDays.includes(date)) {
+                        let checkmark = document.createElement("span");
+                        checkmark.classList.add("checkmark");
+                        checkmark.innerHTML = "✔";
+                        cell.appendChild(checkmark);
+                    }
+
+                    // Add events
+                    if (events[dayString]) {
+                        let eventDiv = document.createElement("div");
+                        eventDiv.classList.add("event", events[dayString].type);
+                        eventDiv.innerText = `[${events[dayString].type.toUpperCase()}] ${events[dayString].text}`;
+                        cell.appendChild(eventDiv);
+                    }
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+            if (date > totalDays) break;
+        }
+    }
+
+    function prevMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar();
+    }
+
+    function nextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar();
+    }
+
+    generateCalendar();
+</script>
+
+</body>
+</html>

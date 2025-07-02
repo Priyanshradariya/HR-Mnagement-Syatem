@@ -1,0 +1,202 @@
+.container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 94%;
+    /* max-width: 1000px; */
+    height: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#addAttendance {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+#addAttendance:hover {
+    background-color: #0056b3;
+}
+
+.date-filter input {
+    padding: 11px 29px;
+    border-radius: 42px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    padding: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #252525;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    background-color: #444;
+}
+
+.pagination button:hover {
+    background-color: #666;
+}
+
+
+
+
+
+/* Tablet View (1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%;
+        height: 600px;
+        padding: 15px;
+
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #addAttendance {
+        margin-top: 10px;
+    }
+
+    .date-filter input {
+        width: 100%;
+        text-align: center;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Small Tablet View (768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .header {
+        flex-direction: row;
+        /* align-items: center; */
+        text-align: center;
+    }
+
+    #addAttendance {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .date-filter input {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 0px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .pagination button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile View (320px) */
+/* @media screen and (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #addAttendance {
+        width: 100%;
+        padding: 8px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    .date-filter input {
+        width: 100%;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination button {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin: 3px;
+    }
+} */

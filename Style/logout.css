@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    margin: 50px;
+}
+
+.popup-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px; /* Position it below the button */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.popup-menu p {
+    margin: 0 0 10px;
+}
+
+.popup-menu button {
+    margin-right: 5px;
+}

@@ -1,0 +1,205 @@
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    /* Dashboard Grid */
+    .dashboard {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+    }
+
+    .dashboard2{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    /* Welcome Card */
+    .welcome-card {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        width: 28%;
+    }
+    
+    /* Attendance Button */
+    .attendance-card {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        padding:20px;
+        width:28%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+
+    }
+
+    attendance-btn:disabled .attendance-card{
+        background: linear-gradient(to right, #198b04, #7bfc25);   
+    }
+    
+    .attendance-btn {
+        background: none;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    /* Quote Card */
+    .quote-card {
+        background: #1e1e1e;
+        padding: 20px ;
+        border-radius: 10px;
+        grid-column: span 2;
+        text-align: center;
+        width: 28%;
+    }
+    
+    /* Salary Card */
+    .salary-card {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 28%;
+    }
+    
+    /* Pay Day Card */
+    .pay-day-card {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        padding: 20px;
+        border-radius: 10px;
+        width: 28%;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+        background: #333;
+        border-radius: 5px;
+        margin-top: 10px;
+        
+    }
+    
+    .progress-bar div {
+        height: 10px;
+        background: yellow;
+        border-radius: 5px;
+    }
+    
+    /* Data Card */
+    .data-card {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        width: 28%;
+    }
+
+
+    @media screen and (max-width: 1024px) {
+        .dashboard {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+            max-width: 85%;
+        }
+    
+        .quote-card {
+            grid-column: span 1;
+        }
+    
+        .attendance-card {
+            padding: 50px 15px;
+        }
+    
+        .attendance-btn {
+            font-size: 22px;
+        }
+    
+        .progress-bar {
+            height: 8px;
+        }
+    
+        .progress-bar div {
+            height: 8px;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .dashboard {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+            max-width: 90%;
+        }
+    
+        .welcome-card,
+        .quote-card,
+        .salary-card,
+        .pay-day-card,
+        .data-card {
+            padding: 15px;
+            font-size: 16px;
+        }
+    
+        .attendance-card {
+            padding: 40px 10px;
+        }
+    
+        .attendance-btn {
+            font-size: 20px;
+        }
+    
+        .progress-bar {
+            height: 7px;
+        }
+    
+        .progress-bar div {
+            height: 7px;
+        }
+    }
+    
+    @media screen and (max-width: 320px) {
+        .dashboard {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 8px;
+            max-width: 100%;
+        }
+    
+        .welcome-card,
+        .quote-card,
+        .salary-card,
+        .pay-day-card,
+        .data-card {
+            padding: 10px;
+            font-size: 14px;
+        }
+    
+        .attendance-card {
+            padding: 30px 8px;
+        }
+    
+        .attendance-btn {
+            font-size: 18px;
+        }
+    
+        .progress-bar {
+            height: 6px;
+        }
+    
+        .progress-bar div {
+            height: 6px;
+        }
+    }
+    
